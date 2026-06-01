@@ -501,3 +501,35 @@ if balance - amount >= 1000:
 else:
     print("Transaction Denied")
 
+#Little Elephant and Strings
+k, n = map(int, input().split())
+favs = [input() for _ in range(k)]
+for _ in range(n):
+    s = input()
+    print("Good" if len(s) >= 47 or any(f in s for f in favs) else "Bad")
+
+#Rectangle and Square
+a,b,c=map(int,input().split())
+sq=c**2
+rec=a*b
+if sq==rec:
+    print("yes")
+else:
+    print("no")
+
+#Cake Discount
+n=int(input())
+if n>=5:
+    price=n*85
+else:
+    price=n*100
+print(price)
+    
+#Good Turn
+t = int(input())
+for _ in range(t):
+    x, y = map(int, input().split())
+    if x + y > 6:
+        print("YES")
+    else:
+        print("NO")
