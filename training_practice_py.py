@@ -533,3 +533,164 @@ for _ in range(t):
         print("YES")
     else:
         print("NO")
+
+#Employee Performance Tracker
+class Employee:
+    def __init__(self, name, scores):
+        self.name = name
+        self.scores = scores
+    def best_score(self):
+        return max(self.scores)
+    def average_score(self):
+        return sum(self.scores) / len(self.scores)
+    def months_above_80(self):
+        count = 0
+        for score in self.scores:
+            if score > 80:
+                count += 1
+        return count
+    def display(self):
+        print("Best Score:", self.best_score())
+        print("Average Score:", round(self.average_score(), 1))
+        print("Months Above 80:", self.months_above_80())
+
+#Smart Parking Lot System
+class ParkingLot:
+    def __init__(self, vehicles):
+        self.vehicles = vehicles
+
+    def duplicate_vehicles(self):
+        duplicates = []
+        for v in self.vehicles:
+            if self.vehicles.count(v) > 1 and v not in duplicates:
+                duplicates.append(v)
+        return duplicates
+    def unique_vehicles(self):
+        return len(set(self.vehicles))
+    def display(self):
+        print("Duplicate Vehicles:", self.duplicate_vehicles())
+        print("Unique Vehicles:", self.unique_vehicles())
+vehicles = list(map(int, input("Enter vehicle numbers separated by space: ").split()))
+parking = ParkingLot(vehicles)
+parking.display()
+name = input("Employee Name: ")
+#Cricket Team Statistics
+class Player:
+    def __init__(self, name, scores):
+        self.name = name
+        self.scores = scores
+
+    def highest_score(self):
+        return max(self.scores)
+    def lowest_score(self):
+        return min(self.scores)
+    def average_score(self):
+        return sum(self.scores) / len(self.scores)
+    def half_centuries(self):
+        count = 0
+        for score in self.scores:
+            if score >= 50:
+                count += 1
+        return count
+    def display(self):
+        print("Highest Score:", self.highest_score())
+        print("Lowest Score:", self.lowest_score())
+        print("Average Score:", round(self.average_score(), 1))
+        print("Half Centuries:", self.half_centuries())
+name = input("Player Name: ")
+scores = list(map(int, input("Enter scores separated by space: ").split()))
+player = Player(name, scores)
+player.display()
+
+#E-Commerce Shopping Cart
+class ShoppingCart:
+    def __init__(self, prices):
+        self.prices = prices
+    def total_bill(self):
+        return sum(self.prices)
+    def costliest_item(self):
+        return max(self.prices)
+    def discounted_bill(self):
+        total = self.total_bill()
+        if total > 5000:
+            return total - (total * 15 / 100)
+        return total
+    def display(self):
+        print("Total Bill:", self.total_bill())
+        print("Costliest Item:", self.costliest_item())
+        print("Discounted Bill:", int(self.discounted_bill()))
+prices = list(map(int, input("Enter prices separated by space: ").split()))
+cart = ShoppingCart(prices)
+cart.display()
+
+#Hospital Patient Monitoring System
+class Patient:
+    def __init__(self, name, temperatures):
+        self.name = name
+        self.temperatures = temperatures
+    def highest_temperature(self):
+        return max(self.temperatures)
+    def lowest_temperature(self):
+        return min(self.temperatures)
+    def abnormal_readings(self):
+        count = 0
+        for temp in self.temperatures:
+            if temp > 100:
+                count += 1
+        return count
+    def display(self):
+        print("Highest Temperature:", self.highest_temperature())
+        print("Lowest Temperature:", self.lowest_temperature())
+        print("Abnormal Readings:", self.abnormal_readings())
+name = input("Patient Name: ")
+temperatures = list(map(float, input("Enter temperatures separated by space: ").split()))
+patient = Patient(name, temperatures)
+patient.display()
+
+# Movie Ticket Booking System
+class MovieTicket:
+    def __init__(self, booked_seats):
+        self.booked_seats = booked_seats
+    def is_booked(self, seat):
+        return seat in self.booked_seats
+    def total_booked_seats(self):
+        return len(self.booked_seats)
+    def available_seats(self):
+        available = []
+        for seat in range(1, 21):
+            if seat not in self.booked_seats:
+                available.append(seat)
+        return available
+    def display(self):
+        print("Total Booked Seats:", self.total_booked_seats())
+        print("Available Seats:", self.available_seats())
+booked_seats = list(map(int, input("Enter booked seats separated by space: ").split()))
+movie = MovieTicket(booked_seats)
+movie.display()
+
+#test 1 anagram
+
+str1 = input("Enter first string: ")
+str2 = input("Enter second string: ")
+
+if sorted(str1.lower()) == sorted(str2.lower()):
+    print("Anagram")
+else:
+    print("Not Anagram")
+
+#test 2 equivalent 
+line1 = input().split()
+line2 = input().split()
+freq1 = {}
+freq2 = {}
+for word in line1:
+    freq1[word] = freq1.get(word, 0) + 1
+for word in line2:
+    freq2[word] = freq2.get(word, 0) + 1
+if freq1 == freq2:
+    print("Equivalent")
+else:
+    print("Not Equivalent")
+scores = list(map(int, input("Enter scores separated by space: ").split()))
+emp = Employee(name, scores)
+emp.display()
